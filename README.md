@@ -1,24 +1,29 @@
-# README
+# Elasticsearch example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample app with Elasticsearch
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+How to run it
 
-* Configuration
+ Make sure [Elasticsearch][1] is installed on your PC.
+ You will need to turn it on at first.
 
-* Database creation
+ Next one install gems and create db:
+```bash
+bundle install
+rake db:create
+rake db:migrate
+```
+Migrate your db with example data from Wikipedia:
 
-* Database initialization
+```bash
+rake db:seed
+```
+Finnally, run puma server:
 
-* How to run the test suite
+```bash
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[1]: https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html
